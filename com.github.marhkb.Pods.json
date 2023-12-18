@@ -85,7 +85,11 @@
                     "url": "https://github.com/marhkb/pods/releases/download/v2.0.0/pods-v2.0.0.tar.xz",
                     "sha256": "6aabfbd6d6c71fa9b1427f95ca8bdf15caa7d652abe5504e3ac9ff17230f7205",
                     "strip-components": 0
-                }
+                },
+		{
+		    "type": "patch",
+                    "path": "patches/privileged.diff"
+		}
             ]
         }
     ]
