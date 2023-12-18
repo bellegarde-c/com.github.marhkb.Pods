@@ -1,17 +1,13 @@
-diff --git a/data/com.github.marhkb.Pods.metainfo.xml.in.in b/data/com.github.marhkb.Pods.metainfo.xml.in.in
-index 6dbfa600..b1e4a0cc 100644
---- a/data/com.github.marhkb.Pods.metainfo.xml.in.in
-+++ b/data/com.github.marhkb.Pods.metainfo.xml.in.in
-@@ -52,6 +52,7 @@
-           <li>Port <em>GtkTreeView</em> to <em>GtkColumnView</em>. (#746)</li>
-           <li>Enable searching for container and pod processes. (#747)</li>
-           <li>feat(top-page): Enable killing container processes. (#748)</li>
-+          <li>Make it possible to create privileged containers. (#753)</li>
-         </ul>
-       </description>
-     </release>
+commit 55b1e7739a4efd2dcec9225baaa5ddba0e17fd0d
+Author: Marcus Behrendt <marcus.behrendt.86@gmail.com>
+Date:   Tue Dec 5 17:17:29 2023 +0100
+
+    feat(container-creation-page): Add `privileged` option
+    
+    Fixes #752
+
 diff --git a/src/view/container_creation_page.rs b/src/view/container_creation_page.rs
-index db7f8d6b..e4555759 100644
+index 592cff6b..8979f19c 100644
 --- a/src/view/container_creation_page.rs
 +++ b/src/view/container_creation_page.rs
 @@ -68,6 +68,8 @@ mod imp {
@@ -23,7 +19,7 @@ index db7f8d6b..e4555759 100644
          pub(super) memory_switch: TemplateChild<gtk::Switch>,
          #[template_child]
          pub(super) mem_value: TemplateChild<gtk::Adjustment>,
-@@ -548,6 +550,7 @@ impl ContainerCreationPage {
+@@ -543,6 +545,7 @@ impl ContainerCreationPage {
              .name(imp.name_entry_row.text().as_str())
              .pod(self.pod().as_ref().map(model::Pod::name))
              .terminal(imp.terminal_switch_row.is_active())
@@ -32,10 +28,10 @@ index db7f8d6b..e4555759 100644
                  imp.port_mappings()
                      .iter::<model::PortMapping>()
 diff --git a/src/view/container_creation_page.ui b/src/view/container_creation_page.ui
-index 81d47127..1246c264 100644
+index 7d94a743..218439ec 100644
 --- a/src/view/container_creation_page.ui
 +++ b/src/view/container_creation_page.ui
-@@ -163,6 +163,13 @@
+@@ -174,6 +174,13 @@
                                            </object>
                                          </child>
  
@@ -49,4 +45,3 @@ index 81d47127..1246c264 100644
                                          <child>
                                            <object class="AdwExpanderRow">
                                              <property name="enable-expansion" bind-source="memory_switch" bind-property="active" bind-flags="sync-create"/>
-
