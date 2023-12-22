@@ -86,10 +86,14 @@
                     "sha256": "6aabfbd6d6c71fa9b1427f95ca8bdf15caa7d652abe5504e3ac9ff17230f7205",
                     "strip-components": 0
                 },
-		{
-		    "type": "patch",
+                {
+                    "type": "patch",
                     "path": "patches/privileged.diff"
-		}
+                },
+                {
+                    "type": "patch",
+                    "path": "patches/2128b02bd35ef166061053751ed7f08b7ce13faa.diff"
+                }
             ]
         }
     ]

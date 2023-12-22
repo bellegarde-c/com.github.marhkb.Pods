@@ -1,0 +1,25 @@
+diff --git a/data/com.github.marhkb.Pods.gschema.xml.in b/data/com.github.marhkb.Pods.gschema.xml.in
+index 1389fcf6..68aa6705 100644
+--- a/data/com.github.marhkb.Pods.gschema.xml.in
++++ b/data/com.github.marhkb.Pods.gschema.xml.in
+@@ -47,17 +47,17 @@
+       <description></description>
+     </key>
+     <key name="show-only-running-containers" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Whether to show only running containers</summary>
+       <description></description>
+     </key>
+     <key name="show-only-running-pods" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Whether to show only running pods</summary>
+       <description></description>
+     </key>
+     <key name="show-only-used-volumes" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Whether to show only used volumes</summary>
+       <description></description>
+     </key>
